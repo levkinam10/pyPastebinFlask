@@ -1,0 +1,64 @@
+#TitleText {
+    width: 100vw;
+    height: 1vh;
+
+
+    position: absolute;
+    top: -70%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: Calibri;
+    font-size: 10vh;
+    text-align: center;
+    color: #000000;
+    margin: auto;
+}
+#CentralDiv {
+    display: flex;
+    width: 90vw;
+    height: 15vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(217, 217, 217, 1);
+}
+
+#FormDiv {
+    display: flex;
+    width: 80vw;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 10vh;
+
+}
+#id {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: -1em;
+
+    margin: auto;
+    font-size: 3vh;
+}
+#SumbitBtn {
+    position: absolute;
+    right: -1em;
+    width: 20%;
+    height: 100%;
+    Font-size: 3vh;
+}

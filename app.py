@@ -8,12 +8,20 @@ db.database_creation.create()
 @app.route('/')
 def index():
     return flask.render_template('index.html')
-#{{url_for('.static', filename='IndexFrame.css')}}
+# {{url_for('.static', filename='IndexFrame.css')}}
 
 
-@app.route('/load')
-def load():
-    return flask.render_template('LoadTextFromDB.html', ID_text='ID', Text1='Text')
+@app.route('/loader', methods=['POST'])
+def loader():
+    if flask.request.form['id'] == '': return flask.render_template('ID_Dialog.html')
+    return flask.redirect(flask.url_for('load', id_text=flask.request.form['id']))
+@app.route('/id_sel')
+def id_sel():
+    return flask.render_template('ID_Dialog.html')
+
+@app.route('/load/<id_text>')
+def load(id_text):
+    return flask.render_template('LoadTextFromDB.html', ID_text=id_text, Text1=db.search_module.db_search(id_text))
 
 
 @app.route('/upload')
@@ -24,8 +32,8 @@ def upload():
 @app.route('/db_add', methods=['POST'])
 def db_add():
     if flask.request.form['text'] == '' or flask.request.form['text'] == '  ': return flask.render_template('UploadTextToDB.html')
-    print(db.insert_module.db_insert(flask.request.form['text']))
-    return flask.render_template('index.html')
+    id_text = db.insert_module.db_insert(flask.request.form['text'])
+    return flask.redirect(flask.url_for('load', id_text=id_text))
 
 
 if __name__ == '__main__':

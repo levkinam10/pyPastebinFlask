@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ID select</title>
+    <link rel="stylesheet" href="{{url_for('.static', filename='ID_dialogFrame.css')}}">
+</head>
+<body>
+<div id="TitleText">Enter ID</div>
+<div id="CentralDiv">
+    <div id="FormDiv">
+    <form action="{{ url_for('loader') }}" method="post", ID="id_select">
+        <input type="text" minlength="9" maxlength="9" name="id" id="id" placeholder="ID">
+        <input type="submit" id="SumbitBtn" value="Load">
+    </form></div></div>
+</body>
+</html>
