@@ -48,16 +48,16 @@
 }
 #id {
     position: absolute;
-    width: 80%;
+    width: 79%;
     height: 100%;
-    left: -1em;
+    left: 0vw;
 
     margin: auto;
     font-size: 3vh;
 }
 #SumbitBtn {
     position: absolute;
-    right: -1em;
+    right: 0vw;
     width: 20%;
     height: 100%;
     Font-size: 3vh;
