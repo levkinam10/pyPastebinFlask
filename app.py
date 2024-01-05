@@ -10,7 +10,7 @@ def index():
 
 @app.route('/load')
 def load():
-    return flask.render_template('LoadTextFromDB.html', ID_text='loaded')
+    return flask.render_template('LoadTextFromDB.html', ID_text='ID', Text1='Text')
 
 @app.route('/upload')
 def upload():
