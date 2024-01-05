@@ -1,6 +1,9 @@
 import flask
-
+import db
 app = flask.Flask(__name__)
+
+db.database_creation.create()
+
 
 @app.route('/')
 def index():
@@ -12,14 +15,16 @@ def index():
 def load():
     return flask.render_template('LoadTextFromDB.html', ID_text='ID', Text1='Text')
 
+
 @app.route('/upload')
 def upload():
     return flask.render_template('UploadTextToDB.html')
 
+
 @app.route('/db_add', methods=['POST'])
 def db_add():
     if flask.request.form['text'] == '' or flask.request.form['text'] == '  ': return flask.render_template('UploadTextToDB.html')
-    print(flask.request.form['text'])
+    print(db.insert_module.db_insert(flask.request.form['text']))
     return flask.render_template('index.html')
 
 
