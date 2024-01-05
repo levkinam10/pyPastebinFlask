@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link rel="StyleSheet" href="{{url_for('.static', filename='IndexFrame.css')}}" />
+</head>
+<body>
+<div id="TitleText">Pastebin Project</div>
+<div id="CentralDiv">
+    <div id="CentralDivTtitle">Let's get started</div>
+    <a href="{{ url_for('load') }}"><button id="LoadBtn">Load by ID</button></a>
+    <a href="{{ url_for('upload') }}"><button id="UploadBtn">Upload</button></a>
+</div>
+</body>
+</html>
