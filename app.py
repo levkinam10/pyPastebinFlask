@@ -16,8 +16,8 @@ def load():
 def upload():
     return flask.render_template('UploadTextToDB.html')
 
-@app.route('/db', methods=['POST'])
-def db():
+@app.route('/db_add', methods=['POST'])
+def db_add():
     if flask.request.form['text'] == '' or flask.request.form['text'] == '  ': return flask.render_template('UploadTextToDB.html')
     print(flask.request.form['text'])
     return flask.render_template('index.html')
