@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="TitleText">Enter Text To Upload</div>
-    <div id="FormDiv"><form id="Form" action="{{ url_for('db') }}" method="post">
+    <div id="FormDiv"><form id="Form" action="{{ url_for('db_add') }}" method="post">
         <textarea minlength="2" id="TextArea" name="text"></textarea>
         <input type="submit" value="Save" id="SumbitBtn">
     </form></div>
