@@ -1,8 +1,6 @@
 #TitleText {
     width: 100vw;
     height: 1vh;
-
-
     position: absolute;
     top: -70%;
     bottom: 0;
@@ -44,14 +42,12 @@
     right: 0;
     margin: auto;
     font-size: 10vh;
-
 }
 #id {
     position: absolute;
     width: 79%;
     height: 100%;
     left: 0vw;
-
     margin: auto;
     font-size: 3vh;
 }
