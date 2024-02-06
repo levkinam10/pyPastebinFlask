@@ -1,8 +1,10 @@
 import sqlite3
-
+import os
 
 def create():
-    conn = sqlite3.connect('pastebin_db')
+    if not os.path.exists("db_data"):
+        os.makedirs("db_data")
+    conn = sqlite3.connect('db_data/pastebin_db')
     c = conn.cursor()
 
 

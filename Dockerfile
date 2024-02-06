@@ -4,8 +4,7 @@ FROM alpine
 
 WORKDIR /python-docker
 
-RUN apk add --no-cache python3 py3-pip
-RUN apk add py3-flask
+RUN apk add --no-cache python3 py3-pip py3-flask
 
 EXPOSE 80
 

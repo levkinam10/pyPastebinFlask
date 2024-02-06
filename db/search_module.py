@@ -3,7 +3,7 @@ import sqlite3
 
 def db_search(id1):
     tuple_simple = (1,2)
-    conn = sqlite3.connect('pastebin_db')
+    conn = sqlite3.connect('db_data/pastebin_db')
     c = conn.cursor()
     c.execute('SELECT * FROM pastebin1 WHERE pastebin_id = ?', (id1,))
     res = c.fetchone()

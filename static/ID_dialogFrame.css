@@ -43,7 +43,10 @@
     position: absolute;
     width: 79%;
     height: 100%;
-    left: 0vw;
+    left: -20%;
+    right: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
     font-size: 3vh;
 }
