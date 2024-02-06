@@ -36,5 +36,11 @@ def db_add():
     return flask.redirect(flask.url_for('load', id_text=id_text))
 
 
+@app.route('/api/get/<id_get>', methods=['GET'])
+def api_get(id_get):
+    return flask.jsonify({'text': db.search_module.db_search(id_get)})
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, port=80)
