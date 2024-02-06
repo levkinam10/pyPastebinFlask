@@ -15,15 +15,21 @@ def index():
 def loader():
     if flask.request.form['id'] == '': return flask.render_template('ID_Dialog.html')
     return flask.redirect(flask.url_for('load', id_text=flask.request.form['id']))
+
+
+@app.route('/id_sel/')
 @app.route('/id_sel')
 def id_sel():
     return flask.render_template('ID_Dialog.html')
 
+
+@app.route('/load/<id_text>/')
 @app.route('/load/<id_text>')
 def load(id_text):
     return flask.render_template('LoadTextFromDB.html', ID_text=id_text, Text1=db.search_module.db_search(id_text))
 
 
+@app.route('/upload/')
 @app.route('/upload')
 def upload():
     return flask.render_template('UploadTextToDB.html')
@@ -36,10 +42,18 @@ def db_add():
     return flask.redirect(flask.url_for('load', id_text=id_text))
 
 
+@app.route('/api/get/<id_get>/', methods=['GET'])
 @app.route('/api/get/<id_get>', methods=['GET'])
 def api_get(id_get):
     return flask.jsonify({'text': db.search_module.db_search(id_get)})
 
+
+@app.route('/api/post', methods=['POST'])
+@app.route('/api/post/', methods=['POST'])
+def api_post():
+    context = flask.request.json
+    text1 = context['text']
+    return flask.jsonify({'id': db.insert_module.db_insert(text1)}), 201
 
 
 if __name__ == '__main__':
